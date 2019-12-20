@@ -84,7 +84,7 @@ public class MaterialInstance {
      * @param x    the value of the material parameter
      */
     public void setParameter(@NonNull String name, float x) {
-        nSetParameterFloat(getNativeObject(), name, x);
+    nSetParameterFloat(getNativeObject(), name, x);
     }
 
     /**

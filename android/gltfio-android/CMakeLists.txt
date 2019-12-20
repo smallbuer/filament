@@ -33,6 +33,10 @@ add_library(geometry STATIC IMPORTED)
 set_target_properties(geometry PROPERTIES IMPORTED_LOCATION
         ${FILAMENT_DIR}/lib/${ANDROID_ABI}/libgeometry.a)
 
+add_library(camutils STATIC IMPORTED)
+set_target_properties(camutils PROPERTIES IMPORTED_LOCATION
+        ${FILAMENT_DIR}/lib/${ANDROID_ABI}/libcamutils.a)
+
 add_library(filabridge STATIC IMPORTED)
 set_target_properties(filabridge PROPERTIES IMPORTED_LOCATION
         ${FILAMENT_DIR}/lib/${ANDROID_ABI}/libfilabridge.a)
@@ -78,6 +82,7 @@ set_target_properties(gltfio-jni PROPERTIES LINK_DEPENDS
 
 # The ordering in the following list is important because CMake does not have dependency information.
 target_link_libraries(gltfio-jni
+        camutils
         gltfio
         filament
         backend
